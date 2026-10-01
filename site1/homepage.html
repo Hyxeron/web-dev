@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: #f2f2f2;
+        font-family: sans-serif;
+        width: auto;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+    body {
+        background: linear-gradient(to top right, #1f1c18, #8E0E00);
+        min-height: 100vh;
+    }
+    .header {
+        background: linear-gradient(to top right, #6e6e6e, #d4d4d4);
+        padding: 10px 40px 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0px 0px 20px 20px;
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        animation: fadeOut linear both;
+        animation-timeline: scroll();
+        animation-range: 0px 100vh;
+    }
+    @keyframes fadeOut {
+        to {
+            opacity: 0;
+        }
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+    }
+    .sec1 {
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .sec2 {
+      height: auto;
+    }
+    .sec1 h2, .sec2 h2 {
+        border-bottom: solid 3px;
+        width: 320px;
+        padding-bottom: 10px;
+    }
+    .stack {
+        position: relative;
+        width: 180px;
+        height: 240px;
+    }
+    .card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 180px;
+        height: 240px;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        transition: transform 0.5s cubic-bezier(.2, .9, .3, 1.2);
+    }
+    .c1 {
+       background: url(PC.jpg);
+       background-size: cover;
+       transform: rotate(-6deg);
+       z-index: 1;
+    }
+    .c2 {
+        background: url(TCGC.jpeg);
+        background-size: cover;
+        background-position: center;
+        transform: rotate(0deg);
+        z-index: 2;
+    }
+    .c3 {
+        background: url(me.jpg);
+        background-size: cover;
+        background-position: center;
+        transform: rotate(6deg);
+        z-index: 3;
+    }
+     .stack:active .c1 {
+        transform: translate(-90px, -30px) rotate(-18deg);
+    }
+     .stack:active .c2 {
+        transform: translate(0px, -55px) rotate(0deg);
+    }
+     .stack:active .c3 {
+        transform: translate(90px, -30px) rotate(18deg);
+    }
+    .collage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    .stack {
+        margin: 50px 130px 50px 117px;
+    }
+    .collage h5 {
+        margin: 0px 10px 0px 10px;
+        border: solid 2px;
+        border-radius: 20px;
+        padding: 10px;
+        text-indent: 20px;
+    }
+    .crsl {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        transform-style: preserve-3d;
+        animation: animate 8s linear infinite;
+        margin: 20px 0px 40px 0px;
+    }
+    .item {
+        position: absolute;
+        inset: 0;
+        border-radius: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .55), 0 8px 15px rgba(0, 0, 0, .35);
+    }
+    .r1 {
+        background: url(math.jpeg);
+        background-size: cover;
+        background-position: right top;
+        transform: translateZ(120px);
+    }
+    .r2 {
+        background: url(code.jpg);
+        background-size: cover;
+        transform: rotateY(120deg) translateZ(120px);
+    }
+    .r3 {
+        background: url(tech.jpeg);
+        background-size: cover;
+        background-position: center;
+        transform: rotateY(240deg) translateZ(120px);
+    }
+    @keyframes animate {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+    .container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px;
+    }
+    dl {
+        padding: 10px;
+        border-radius: 20px;
+        border: solid 2px;
+        font-weight: 800;
+    }
+    dt, dd {
+        margin: 20px;
+    }
+    dt {
+        border-bottom: solid 2px;
+        padding-bottom: 10px;
+        width: 140px;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Hello, Administrator!</h1>
+        <img src="unnamed.png" height="60" width="60" alt="" />
+    </div>
+    <div class="main">
+        <div class="sec1">
+            <h2>Life as a CS student in TCGC</h2>
+            <div class="collage">
+                <div class="stack">
+                    <div class="card c1"></div>
+                    <div class="card c2"></div>
+                    <div class="card c3"></div>
+                </div>
+                <h5>
+                   Having only spent a few months here, it's not so bad. This place is quite far from my hometown so studying here <br> gave me an opportunity to meet new people. Some if not most students here came from different provinces/cities <br> so it's not unusual that new friend groups form naturally. Classes in college are definitely different from high school. <br> Back then, when a subject teacher is absent and doesn't have a substitute, you're basically stuck until the next period. <br> Now, you can just walk out and come back when the next class starts. It feels refreshing. As someone who came from <br> the ICT strand back in high school, I sorta have an advantage in our major courses. I'm fairly familiar with computers <br> and have a decent background with front-end work. We have two majors by the way Prog 1 and IntroCom. Programming 1 <br> can feel abit intimidating as it's a new environment for me but it's not as far off from my past javascript experience. <br> Introduction to Computing in the other hand feels like a breeze. It's basically just a recap of what I already learned a <br> year ago. I don't know about our next term though, we're now gonna be tackling binary ( math seriously hurts my brain ). <br> My overall experience here isn't that bad. Aside from the 30 minute commute. It really sucks when class ends at 7PM, the <br> bus could either arrive early or by the next hour so yeah.. that's awfully late. I seriously hope my choices wouldn't <br> disappoint me in the near future though. I don't know why I entered CS knowing full well I suck at math but here we are. <br> No turning back now.
+                </h5>
+            </div>
+        </div>
+        <div class="sec2">
+            <h2>What I expect in this program</h2>
+            <div class="container2">
+                <div class="crsl">
+                    <div class="item r1"></div>
+                    <div class="item r2"></div>
+                    <div class="item r3"></div>
+                </div>
+                <div class="list">
+                    <dl>
+                        <dt>TONS OF MATH</dt>
+                        <dd>I expect this course to he alot more heavy on maths since it delves deep into the nitty gritty of computers ( base 2 digits ), and calculus too for <br> advance programming algorithms. As someone that's bad at math, this will definitely be challening.</dd>
+                        <dt>LOTS OF CODING</dt>
+                        <dd>What else should we expect? obviously CODING. There's one course dedicated to it so it's painfully obvious that this will be abundant throughout <br> the whole 4 years of hell. Coding isn't that bad however, trying to think of a logical solution to code is what makes it frustrating.</dd>
+                        <dt>TECH HEAVY</dt>
+                        <dd>The name of the program has the word "computer", it should be self explanatory that having tech literacy is a must. It's expected that we're gonna <br> be dealing with networks, systems, and other related concepts.</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        window.addEventListener('contextmenu', function (e) {
+            e.preventDefault(); 
+        });
+    </script>   
+</body>
+
+</html>

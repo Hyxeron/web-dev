@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log In</title>
+  <style type="text/css" media="all">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      width: auto;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+    body {
+        background: linear-gradient(to top right, #1f1c18, #8E0E00);
+        min-height: 100vh;
+        color: #f2f2f2;
+    }
+    .header {
+        background: linear-gradient(to top right, #6e6e6e, #d4d4d4);
+        padding: 10px 40px 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0px 0px 20px 20px;
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        transition: opacity 0.3s ease-in-out;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to top right, #6e6e6e, #d4d4d4);
+      width: 400px;
+      height: 350px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+    }
+    .container input {
+      margin-bottom: 20px;
+      height: 40px;
+      width: 260px;
+      padding-left: 10px;
+      border: none;
+      opacity: 0.7;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    input:focus {
+      outline: none;
+    }
+    
+    .container button {
+      background: linear-gradient(to top right, #800517, #8E0E00);
+      margin-top: 20px;
+      width: 160px;
+      height: 40px;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      color: #f2f2f2;
+      font-weight: bold;
+      transition: .3s ease-in-out;
+    }
+    button:active {
+      transform: scale(70%);
+    }
+    .transparent {
+      opacity: 0.4;
+    }
+    #error {
+      background: linear-gradient(to top right, #6e6e6e, #d4d4d4);
+      color: #8e0e00;
+      border-radius: 20px;
+      padding: 13px;
+      margin: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transition: 0.3s ease-in-out;
+    }
+    .hidden {
+      display: none;
+      transition: 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome!</h1>
+        <img src="unnamed.png" height="60" width="60" alt="" />
+    </div>
+    <div class="main" >
+        <div id="error" class="hidden">
+            <h3>INCORRECT USERNAME OR PASSWORD</h3>
+        </div>
+        <div class="container">
+            <input type="text" id="user" placeholder="Username">
+            <input type="password"  id="pass" placeholder="Password">
+            <button id="btn" type="submit">LOG IN</button>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        const user = document.getElementById('user');
+        const pass = document.getElementById('pass');
+        const header = document.querySelector('.header');
+        const btn = document.getElementById('btn');
+        const error = document.getElementById('error');
+        
+        btn.addEventListener('click', () => {
+          const userValue = user.value;
+          const passValue = pass.value;
+          if (userValue === "Admin" && passValue === "1234") {
+            window.location.href = "homepage.html";
+            error.classList.add('hidden');
+            user.style.border = "none";
+            pass.style.border = "none";
+          }
+          else {
+            error.classList.remove('hidden');
+            user.style.border = "2px solid #8e0e00";
+            pass.style.border = "2px solid #8e0e00";
+          }
+        });
+        
+        if (window.visualViewport) {
+          const initHeight = window.visualViewport.height;
+          window.visualViewport.addEventListener('resize', () => {
+            const currentHeight = window.visualViewport.height;
+            if (initHeight - currentHeight > 150) {
+              header.classList.add('transparent');
+            }
+            else {
+              header.classList.remove('transparent');
+            }
+          });
+        }
+    </script>
+</body>
+
+</html>
